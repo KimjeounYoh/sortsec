@@ -1,0 +1,12 @@
+.computer-3d-container {
+  width: 100%;
+  height: 550px;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .computer-3d-container {
+    height: 300px;
+  }
+}

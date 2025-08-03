@@ -199,7 +199,7 @@ const testimonials = [
     name: "Janet Oluwatoyin Olabode",
     designation: "Network Perfomance Engineer",
     company: "Huawei",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "https://placehold.co/48x48?text=?" ,
   },
   {
     testimonial:
@@ -207,7 +207,7 @@ const testimonials = [
     name: "Joshua Karisa",
     designation: "Cyber Security Validation Engineer",
     company: "Texcortech",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "https://placehold.co/48x48?text=?" ,
   },
   {
     testimonial:
@@ -215,7 +215,7 @@ const testimonials = [
     name: "Michael Otnoku",
     designation: "HR Strategy & Development",
     company: "Clyde & Co . ICS Learn",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "https://placehold.co/48x48?text=?" ,
   },
   {
     testimonial:
@@ -223,7 +223,7 @@ const testimonials = [
     name: "Santhosh Vardan",
     designation: "Cyber Security Enthusiast",
     company: "GITAM Deemed University",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "https://placehold.co/48x48?text=?" ,
   },
 ];
 

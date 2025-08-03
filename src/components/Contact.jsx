@@ -7,7 +7,10 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+import "../components/canvas/EarthCanvas.css";
+
 const Contact = () => {
+  const [alertMsg, setAlertMsg] = useState("");
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -30,6 +33,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    setAlertMsg("");
 
     emailjs
       .send(
@@ -39,7 +43,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "SortSec",
           from_email: form.email,
-          to_email: "ganiyu.ogundana@outlook.com",
+          to_email: "koredebiolas@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -48,7 +52,7 @@ const Contact = () => {
         () => {
           console.log("Email sent successfully!");
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          setAlertMsg("Thank you. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -60,7 +64,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+         setAlertMsg("Ahh, something went wrong. Please try again.");
         }
       );
   };
@@ -75,6 +79,20 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+
+        {alertMsg && (
+  <div style={{
+    margin: "16px 0",
+    color: "blue",
+    background: "#ffffff",
+    padding: "12px",
+    borderRadius: "8px",
+    textAlign: "center",
+    fontSize: "1.25rem"
+  }}>
+    {alertMsg}
+  </div>
+)}
 
         <form
           ref={formRef}
@@ -126,9 +144,12 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1'
       >
+        <div className="computer-3d-container">
+
         <EarthCanvas />
+        </div>
       </motion.div>
     </div>
   );
